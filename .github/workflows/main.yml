@@ -21,5 +21,3 @@ jobs:
       - name: build base images and upload to local registry
         id: build-base-image
         uses: ./.github/actions/build-base-images
-        with:
-          who-to-greet: 'dinner inside action'
