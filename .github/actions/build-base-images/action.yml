@@ -1,0 +1,20 @@
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+  #   description: 'Who to greet'
+  #   required: true
+  #   default: 'World'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build the Docker image
+      shell: bash
+      env:
+        API_KEY: 'myKey'
+        # APP_FILE: ${{ inputs.app-file }}
+
+      run: ${{ github.action_path }}/docker-compose-build-images.sh
+

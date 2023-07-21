@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  nodetools:
+    build: ./nodetools
+    environment:
+      APP_ENV: ${APP_ENV}
+      APP_REGION: ${APP_REGION}
+    volumes:
+      - ${APP_DIR}:/app

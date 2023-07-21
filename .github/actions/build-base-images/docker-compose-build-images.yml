@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  nodetools:
+    image: ${DOCKER_REGISTRY}/${PROJECT_NAME}-nodetools:${IMAGES_BUILD_NUMBER}
+    extends:
+      file: docker-compose-base-build.yml
+      service: nodetools
