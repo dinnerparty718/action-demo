@@ -4,5 +4,5 @@ services:
 
   nodetools:
     build: ./nodetools
-    volumes:
-      - ${APP_DIR}:/app
+    # volumes:
+    #   - ${APP_DIR}:/app
