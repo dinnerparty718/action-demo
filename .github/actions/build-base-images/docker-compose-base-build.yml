@@ -3,6 +3,6 @@ version: '2'
 services:
 
   nodetools:
-    build: /Users/yc/dinnerparty/action-demo/nodetools
+    build: ./nodetools
     # volumes:
     #   - ${APP_DIR}:/app
