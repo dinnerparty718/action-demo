@@ -2,7 +2,7 @@ version: '2'
 
 services:
   nodetools:
-    image: ${DOCKER_REGISTRY}/${PROJECT_NAME}-nodetools:${IMAGES_BUILD_NUMBER}
+    image: localhost:5000/appbooking-nodetools:latest
     extends:
       file: docker-compose-base-build.yml
       service: nodetools
