@@ -3,6 +3,7 @@ on: [push, workflow_dispatch]
 
 env:
   IS_ALPHA_BUILD: ${{ false || true}}
+  BUCKET_NAME: app-artifact-wfwefew
 
 jobs:
   hello_world_job:
@@ -20,3 +21,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+
+      - name: upload to s3
+        run: |
+          touch test.txt
+          echo "Your string here" >> test.txt
+          aws s3 cp test.txt s3://$BUCKET_NAME
