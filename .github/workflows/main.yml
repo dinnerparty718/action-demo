@@ -2,7 +2,7 @@ on: [push, workflow_dispatch]
 
 
 env:
-  IS_ALPHA_BUILD: false || true
+  IS_ALPHA_BUILD: ${{ false || true}}
 
 jobs:
   hello_world_job:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Alhpha build amend
-        if: env.IS_ALPHA_BUILD== 'true'
+        # if: env.IS_ALPHA_BUILD== 'true'
         run: |
-          echo "This is a alpha build"
+          echo "This is a alpha build $IS_ALPHA_BUILD"
 
