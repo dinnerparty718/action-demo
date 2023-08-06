@@ -2,7 +2,7 @@ on: [push, workflow_dispatch]
 
 
 env:
-  IS_ALPHA_BUILD: true
+  IS_ALPHA_BUILD: false || true
 
 jobs:
   hello_world_job:
