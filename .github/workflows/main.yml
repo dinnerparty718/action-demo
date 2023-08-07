@@ -31,3 +31,7 @@ jobs:
         run: |
           aws s3 cp s3://$BUCKET_NAME/test.zip .
           ls
+
+      - name: generate presigned url
+        run: |
+          aws s3 presign s3://$BUCKET_NAME/test.zip --expires-in 604800
