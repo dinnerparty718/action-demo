@@ -35,5 +35,5 @@ jobs:
       - name: generate presigned url
         run: |
           presigned_url=$(aws s3 presign s3://$BUCKET_NAME/test.zip)
-          curl $presigned_url -O test.zip
+          curl $presigned_url -o test.zip
           ls
