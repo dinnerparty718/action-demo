@@ -34,4 +34,6 @@ jobs:
 
       - name: generate presigned url
         run: |
-          aws s3 presign s3://$BUCKET_NAME/test.zip --expires-in 604800
+          presigned_url=$(aws s3 presign s3://$BUCKET_NAME/test.zip)
+          curl presigned_url
+          ls
